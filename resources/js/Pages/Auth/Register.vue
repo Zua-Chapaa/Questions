@@ -2,10 +2,10 @@
 import {useForm,Link} from "@inertiajs/vue3";
 
 const userForm = useForm({
-    username:"mwaura_kimai",
-    email:"kimmwaus@gmail.com",
-    password:"password",
-    password_confirmation:"password",
+    username:"",
+    email:"",
+    password:"",
+    password_confirmation:"",
 })
 
 function saveUser(){

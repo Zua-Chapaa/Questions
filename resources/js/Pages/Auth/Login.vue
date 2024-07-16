@@ -6,8 +6,8 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
 
 const userForm = useForm({
     _token: csrfToken,
-    email:"kimmwaus@gmail.com",
-    password:"password",
+    email:"",
+    password:"",
 })
 
 </script>

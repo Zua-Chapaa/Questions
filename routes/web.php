@@ -16,10 +16,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),])->group(fu
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard/index');
     })->name('dashboard');
-
-    Route::get('/StartSession', function () {
-        return Inertia::render('Dashboard/StartSession');
-    });
 });
 
 Route::middleware('guest')->group(function () {
@@ -50,3 +46,4 @@ Route::middleware('guest')->group(function () {
 
 
 include "SessionManager/index.php";
+include "AccountManager/index.php";

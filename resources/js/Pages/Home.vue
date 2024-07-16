@@ -6,7 +6,7 @@ import { Link } from '@inertiajs/vue3';
     <div class="holder h-[100vh] w-full flex justify-center pt-[40px]">
         <div class="w-[300px] h-[200px] ">
             <div class="flex items-center justify-center mb-[20px]">
-                <img class="h-[100px]" src="/storage/System/logo.png" alt="Logo">
+                <img class="h-[100px]" src="/storage/system/logo.png" alt="Logo">
             </div>
             <div class="text-center text-white mb-[30px]">
                 <p class="mb-[40px]">Welcome to Shikisha Kakitu Questions evaluation Program</p>

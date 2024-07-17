@@ -23,7 +23,7 @@ import { Link } from '@inertiajs/vue3';
             </div>
             <div class="flex items-center flex-col gap-[10px]">
                 <Link class="btn btn-primary w-full text-center" as="button" href="/register">Register</Link>
-                <Link class="btn btn-primary w-full text-center" as="button" href="/lognin">Log In</Link>
+                <Link class="btn btn-primary w-full text-center" as="button" href="/login">Log In</Link>
             </div>
 
         </div>

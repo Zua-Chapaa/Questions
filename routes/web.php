@@ -9,7 +9,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home');
-});
+})->name('Home');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),])->group(function () {
 
@@ -23,7 +23,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/register', function () {
         return Inertia::render('Auth/Register');
     });
-    Route::get('/lognin', function () {
+    Route::get('/login', function () {
         return Inertia::render('Auth/Login');
     });
 

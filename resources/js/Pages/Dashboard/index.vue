@@ -6,7 +6,7 @@ import {Link} from "@inertiajs/vue3";
     <ul class="w-full h-[100vh] flex flex-col items-center justify-center">
         <Link href="/Account" as="li">Account</Link>
         <Link href="/StartSession" as="li">Starts Session</Link>
-        <Link method="POST" href="/logout" as="li">Log Out</Link>
+        <Link href="/logoutaccount" as="li">Log Out</Link>
     </ul>
 </template>
 

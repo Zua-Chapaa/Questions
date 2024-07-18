@@ -47,3 +47,4 @@ Route::middleware('guest')->group(function () {
 
 include "SessionManager/index.php";
 include "AccountManager/index.php";
+include "Admin/index.php";

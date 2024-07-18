@@ -11,9 +11,7 @@ import {Link} from "@inertiajs/vue3";
 </template>
 
 <style lang="scss" scoped>
-
 li{
     @apply w-[150px] h-[60px] bg-gray-700 text-white flex items-center justify-center my-[20px] rounded;
 }
-
 </style>

@@ -24,7 +24,7 @@ class AdminController extends Controller
             }
         }
 
-        $invalidated_questions = InvalidQuestions::take(500)->get();
+        $invalidated_questions = InvalidQuestions::take(10000)->get();
 
         $all_questions = [];
 

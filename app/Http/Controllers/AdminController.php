@@ -15,6 +15,7 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
+
         if ($user == null) {
             return redirect('/login');
         } else {
@@ -23,7 +24,7 @@ class AdminController extends Controller
             }
         }
 
-        $invalidated_questions = InvalidQuestions::take(200)->get();
+        $invalidated_questions = InvalidQuestions::take(500)->get();
 
         $all_questions = [];
 
@@ -46,7 +47,7 @@ class AdminController extends Controller
 
         }
 
-        return Inertia::render('Admin/index', [
+        return Inertia::render('Admin/validate', [
             'questions' => $all_questions,
         ]);
     }

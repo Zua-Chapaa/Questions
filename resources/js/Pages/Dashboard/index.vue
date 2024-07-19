@@ -1,17 +1,42 @@
 <script setup>
-import {Link} from "@inertiajs/vue3";
+import DashboardComponent from "@/Compoents/DashboardComponent.vue";
+
+const props = defineProps(['stats'])
+
 </script>
 
 <template>
-    <ul class="w-full h-[100vh] flex flex-col items-center justify-center">
-        <Link href="/Account" as="li">Account</Link>
-        <Link href="/StartSession" as="li">Starts Session</Link>
-        <Link href="/logoutaccount" as="li">Log Out</Link>
-    </ul>
+    <dashboard-component>
+        <div class="w-[100vw] ">
+            <div class="text-white p-[10px] ">
+                <h2 class="h2">Over All Stats</h2>
+                <ul class="mb-[20px]">
+                    <li class="flex justify-between"><p>Total Applicants</p>
+                        <p>{{ stats.all_user }}</p></li>
+                    <li class="flex justify-between"><p>Total Question</p>
+                        <p>{{ stats.all_questions }}</p></li>
+                    <li class="flex justify-between"><p>Total Validated Question</p>
+                        <p>{{ stats.total_validated_questions }}</p></li>
+                    <li class="flex justify-between"><p>Total Invalidated Question</p>
+                        <p>{{ stats.total_invalidated_questions }}</p></li>
+                </ul>
+            </div>
+        </div>
+    </dashboard-component>
 </template>
 
 <style lang="scss" scoped>
-li{
-    @apply w-[150px] h-[60px] bg-gray-700 text-white flex items-center justify-center my-[20px] rounded;
+div {
+    div {
+        ul {
+            li {
+                @apply py-[20px] px-[5px] bg-gray-600 my-[10px] rounded flex-col;
+                p:nth-of-type(2) {
+                    align-self: end;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
 }
 </style>

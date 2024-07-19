@@ -1,5 +1,6 @@
 <?php /** @noinspection PhpMultipleClassDeclarationsInspection */
 
+use App\Http\Controllers\AccountController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -12,10 +13,7 @@ Route::get('/', function () {
 })->name('Home');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),])->group(function () {
-
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard/index');
-    })->name('dashboard');
+    Route::get('/dashboard', [AccountController::class,'index'])->name('dashboard');
 });
 
 Route::middleware('guest')->group(function () {

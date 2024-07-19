@@ -3,7 +3,15 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin/choices', [AdminController::class,'index'])->name('admin');
+
+
+
+
+Route::get('/admin', function (){
+    return \Inertia\Inertia::render('Admin/index');
+})->name('admin');
+
+Route::get('/admin/choices', [AdminController::class,'index']);
 
 
 

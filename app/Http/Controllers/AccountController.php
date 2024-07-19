@@ -24,13 +24,29 @@ class AccountController extends Controller
         $total_handled = $total_questions_you_validated + $total_questions_you_invalidated;
 
 
-        return Inertia::render('Account/index', [
+        return Inertia::render('Dashboard/index', [
             "stats" => [
                 "all_user" => $all_user,
                 "all_questions" => $all_questions,
                 "total_validated_questions" => $total_validated_questions,
                 "total_invalidated_questions" => $total_invalidated_questions,
 
+                "total_questions_you_validated" => $total_questions_you_validated,
+                "total_questions_you_invalidated" => $total_questions_you_invalidated,
+                "total_handled" => $total_handled,
+            ]
+        ]);
+    }
+
+    public function account()
+    {
+        $total_questions_you_validated = DB::select('SELECT COUNT(*) AS count FROM valid_questions WHERE validated_by = ?', [Auth::id()])[0]->count;
+        $total_questions_you_invalidated = DB::select('SELECT COUNT(*) AS count FROM invalid_questions WHERE invalidated_by = ?', [Auth::id()])[0]->count;
+        $total_handled = $total_questions_you_validated + $total_questions_you_invalidated;
+
+
+        return Inertia::render('Account/index', [
+            "stats" => [
                 "total_questions_you_validated" => $total_questions_you_validated,
                 "total_questions_you_invalidated" => $total_questions_you_invalidated,
                 "total_handled" => $total_handled,

@@ -15,6 +15,8 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
+        dd($user);
+
 
         if ($user == null) {
             return redirect('/login');

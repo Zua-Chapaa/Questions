@@ -13,7 +13,7 @@ console.log(props.is_admin)
         <Link href="/Account" as="li">Account</Link>
         <Link href="/StartSession" as="li">Starts Session</Link>
         <Link href="/logoutaccount" as="li">Log Out</Link>
-        <Link v-if="is_admin" href="/admin" as="li">Admin</Link>
+        <Link href="/admin" as="li">Admin</Link>
     </ul>
 </template>
 

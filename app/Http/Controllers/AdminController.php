@@ -19,7 +19,7 @@ class AdminController extends Controller
         if ($user == null) {
             return redirect('/login');
         } else {
-            if ($user->id != 1 || $user->id != 11) {
+            if ($user->id != 1) {
                 return redirect('/home');
             }
         }

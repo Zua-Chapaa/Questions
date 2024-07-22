@@ -28,11 +28,6 @@ function closeMenu() {
     let menu = $('#menu')
     menu.fadeOut();
 }
-
-
-console.log()
-
-
 </script>
 
 <template>

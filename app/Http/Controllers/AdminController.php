@@ -7,6 +7,7 @@ use App\Models\Questions;
 use App\Models\ValidQuestions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
 
 class AdminController extends Controller
@@ -15,18 +16,17 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
-        dd($user);
-
-
         if ($user == null) {
             return redirect('/login');
         } else {
-            if ($user->id != 1  ) {
+            if ($user->id == 1 || $user->id == 11) {
+                Log::info("here");
+            }else{
                 return redirect('/home');
             }
         }
 
-        $invalidated_questions = InvalidQuestions::take(10000)->get();
+        $invalidated_questions = InvalidQuestions::take(100000)->get();
 
         $all_questions = [];
 
